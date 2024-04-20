@@ -13,7 +13,7 @@ async def get_all_cities(db: AsyncSession):
     result = await db.execute(
         select(models.City)
     )
-    return result.scalars()
+    return result.scalars().all()
 
 
 @exception_handler
